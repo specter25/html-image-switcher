@@ -1,27 +1,29 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         jQuery FineCrop Plugin Example
     </title>
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="css/fineCrop.css" rel="stylesheet" />
     <link href="css/layout.css" rel="stylesheet" />
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous">
+    </script>
     <script src="js/fineCrop.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
 
 </head>
 
-<body class= "bg">
+<body class="bg">
     <div class=" container">
         <div class="row ">
             <div class="text-center">
@@ -39,7 +41,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="element1">
+            <div class=" element1">
                 <img id="croppedImg" style="border:10px solid #000; margin:auto;">
             </div>
         </div>
@@ -47,7 +49,7 @@
     </div>
 
 
-<!--
+    <!--
     Div structure : Manitan a container which has class "cropHolder"
                     Inside this, another div with the ID of "cropWrapper" and inside this use <img> with any id
                     this have to use in this option: (cropInput: 'inputImage')
@@ -97,8 +99,8 @@
     <script>
         $("#upphoto").finecrop({
             viewHeight: 600,
-            cropWidth: 350,
-            cropHeight: 250,
+            cropWidth: 300,
+            cropHeight: 180,
             cropInput: 'inputImage',
             cropOutput: 'croppedImg',
             zoomValue: 50
@@ -106,18 +108,20 @@
     </script>
 </body>
 <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+            '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
 </script>
 
 </html>
