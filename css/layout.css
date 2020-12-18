@@ -35,24 +35,49 @@ html {
     overflow-y: hidden;
 }
 
-.element1 {
+
+/* .element1 {
     margin: 0;
     position: absolute;
     top: 45%;
     -ms-transform: translateY(-45%);
     transform: translateY(-45%);
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 600px) {
     .element1 {
-        /* margin-top: 8vh; */
-        margin-left: 10rem;
+        margin-top: 8vh;
+
+margin-left: 10rem;
+
+}
+
+}
+@media only screen and (min-width: 768px) {
+    .element1 {
+        left: 31.5%;
+    }
+}
+*/
+
+.croppedImg {}
+
+
+/* On screens that are 992px or less, set the background color to blue */
+
+@media screen and (max-width: 992px) {
+    .croppedImg {
+        background-color: blue;
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .element1 {
-        left: 40%;
+
+/* On screens that are 600px or less, set the background color to olive */
+
+@media screen and (max-width: 600px) {
+    .croppedImg {
+        max-width: 50px !important;
     }
 }
 

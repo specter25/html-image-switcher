@@ -1,5 +1,5 @@
-(function ($) {
-    $.fn.finecrop = function (options) {
+(function($) {
+    $.fn.finecrop = function(options) {
 
         var defaults = {
             viewHeight: 0,
@@ -10,16 +10,16 @@
             zoomValue: 10
         };
         var settings = $.extend({}, defaults, options);
-        return this.each(function () {
+        return this.each(function() {
             var $obj = $(this);
-            $($obj).change(function () {
+            $($obj).change(function() {
                 if (this.files && this.files[0]) {
                     var reader = new FileReader();
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         $('#' + settings.cropInput).attr('src', e.target.result).css('opacity', 0);
-                        $('#' + settings.cropInput).attr('height', settings.viewHeight + 'vh')
+                        $('#' + settings.cropInput).attr('height', settings.viewHeight + 'px')
                         $(".cropHolder").show();
-                        setTimeout(function () {
+                        setTimeout(function() {
                             cropstart();
                         }, 1000);
 
@@ -93,32 +93,32 @@
                 getImgRef();
 
 
-                document.getElementById("zplus").onclick = function () {
+                document.getElementById("zplus").onclick = function() {
                     var imgSrcHeight = parseInt(imgSrc.getAttribute('height'));
                     imgSrc.setAttribute('height', (imgSrcHeight + settings.zoomValue) + 'ch');
                     getImgRef();
                     bgCanvas(lValue, tValue);
                 }
-                document.getElementById("zminus").onclick = function () {
+                document.getElementById("zminus").onclick = function() {
                     var imgSrcHeight = parseInt(imgSrc.getAttribute('height'));
-                    imgSrc.setAttribute('height', (imgSrcHeight - settings.zoomValue) + 'vh');
+                    imgSrc.setAttribute('height', (imgSrcHeight - settings.zoomValue) + 'px');
                     getImgRef();
                     bgCanvas(lValue, tValue);
                 }
-                document.getElementById('cropSubmit').onclick = function () {
+                document.getElementById('cropSubmit').onclick = function() {
                     $("#" + settings.cropOutput).attr('src', getCropped.toDataURL());
                     $(bgcanvas).remove();
                     $(blacksheet).remove();
                     $(getCropped).remove();
                     $(".cropHolder").hide();
                 }
-                document.getElementById("closeCrop").onclick = function(){
-                    $(bgcanvas).remove();
-                    $(blacksheet).remove();
-                    $(getCropped).remove();
-                    $(".cropHolder").hide();
-                }
-                // ------------- -------- drawImage properties ---------- -----------------
+                document.getElementById("closeCrop").onclick = function() {
+                        $(bgcanvas).remove();
+                        $(blacksheet).remove();
+                        $(getCropped).remove();
+                        $(".cropHolder").hide();
+                    }
+                    // ------------- -------- drawImage properties ---------- -----------------
                 function cropCanvas(x, y) {
 
                     var imgSrcC = bgcanvas;
@@ -126,7 +126,7 @@
 
                     var cwidth = getCropped.width;
                     var cheight = getCropped.height;
-                    
+
                     var sx = (elemWidth - cwidth) / 2;
                     var sy = (elemHeight - cheight) / 2;
                     var swidth = cwidth;
@@ -172,7 +172,7 @@
                     var sy = (((y - (elemHeight - settings.cropHeight) / 2) * actualHeight) / elemHeight);
                     var swidth = (cwidth * actualWidth) / elemWidth;
                     var sheight = (cheight * actualHeight) / elemHeight;
-                    
+
                     context.drawImage(imgSrc, sx, sy, swidth, sheight, 0, 0, dwidth, dheight);
                     cropCanvas(x, y);
                 };
@@ -184,10 +184,10 @@
                 if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
                     alert("please do not use IE :) ");
                 } else {
-                    moveHorizontal.oninput = function (event) {
+                    moveHorizontal.oninput = function(event) {
                         bgCanvas(event.target.value, tValue)
                     }
-                    moveVertical.oninput = function (event) {
+                    moveVertical.oninput = function(event) {
                         bgCanvas(lValue, event.target.value);
                     }
                 }
